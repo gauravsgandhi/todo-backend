@@ -8,7 +8,15 @@ dotenv.config();
 const app: Application = express();
 
 //middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://18.117.220.60:3000",   // UI origin
+    //"http://localhost:3000"        // local dev
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+}));
+
 app.use(express.json());
 
 //routes
