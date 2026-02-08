@@ -11,7 +11,7 @@ const app: Application = express();
 app.use(cors({
   origin: [
     "http://18.117.220.60:8080",   // UI origin
-    //"http://localhost:3000"        // local dev
+    "http://localhost:3000"        // local dev
   ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
